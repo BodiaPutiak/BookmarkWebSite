@@ -1,0 +1,71 @@
+@import '../../_colors.scss';
+
+footer {
+    background-color: $dark-blue;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: sticky;
+    bottom: 0;
+
+    .logo-nav-container {
+        display: flex;
+        align-items: center;
+        .logo-foot {
+            img {
+                width: 200px;
+                height: 100%;
+            }
+        }
+        nav {
+            display: flex;
+            align-items: center;  
+            justify-self: center;
+            a {
+                color: #fff;
+                text-decoration: none;
+                padding: 25px;
+                cursor: pointer;
+    
+                &:hover {
+                    transition: all 0.3s ease-out;
+                    color: $light-red;
+                }
+            }
+        }
+    }
+    
+
+    .socials {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+        
+
+        svg {
+            cursor: pointer;
+            height: 30px;
+            &:hover {
+                color: $light-red;
+                transition: all 0.3s ease-out;
+            }
+        }   
+    }
+}
+
+@media (max-width: 850px) {
+    footer {
+        flex-direction: column;
+        .logo-nav-container {
+            margin-top: 30px;
+            flex-direction: column;
+            nav {
+                flex-direction: column;
+            }
+        }
+        .socials {
+            margin-bottom: 30px;
+        }
+    }
+}
