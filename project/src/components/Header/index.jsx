@@ -7,9 +7,11 @@ import Logo from '../../assets/images/logo-bookmark.svg';
 import XMark from '../../assets/images/icon-close.svg';
 import BurgerMenu from '../../assets/images/icon-hamburger.svg';
 import MobileLogo from '../../assets/images/logo-bookmark-mobile-nav.svg'
+import { usePopUp } from '../../context/PopUpContext';
 
 function Header(){
     const [open, setOpen] = useState(false);
+    const { handleLogoHover } = usePopUp();
 
     const handleBurgerMenuButton = () => {
         setOpen(!open);
@@ -22,7 +24,7 @@ function Header(){
         <header>
             <div className='nav-container'>
                 <Link className={`logo ${open ? 'hide' : ''}`}>
-                    <img src={Logo} alt="Bookmark Logo" />
+                    <img onMouseOver={() => handleLogoHover()} src={Logo} alt="Bookmark Logo" />
                 </Link>
 
                 <nav className={'nav-bar'}>

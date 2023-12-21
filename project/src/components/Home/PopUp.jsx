@@ -1,28 +1,10 @@
 import './index.scss'
 import { useState, useEffect } from 'react';
 import IllustrationFeatureTab2 from '../../assets/images/illustration-features-tab-2.svg'
+import { usePopUp } from '../../context/PopUpContext';
 
 function PopUp(){
-    const [openPopUp, setOpenPopUp] = useState(false);
-
-    if (openPopUp) {
-        document.body.classList.add('no-scroll');
-    } else {
-        document.body.classList.remove('no-scroll');
-    }
-    useEffect(() => {
-        const timeoutId = setTimeout(() => {
-            setOpenPopUp(true);
-        }, 30000)
-
-        return () => {
-            clearTimeout(timeoutId);
-        }
-    }, [])
-
-    const handleCloseButton = () => {
-        setOpenPopUp(false);
-    }
+    const { openPopUp, handleCloseButton } = usePopUp();
     return (
         <div onClick={handleCloseButton} className={`window ${openPopUp ? 'show' : ''}`}>
             <div className="pop-up-container">
