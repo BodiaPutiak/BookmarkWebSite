@@ -18,6 +18,7 @@ function Footer(){
                     <NavBar />
                 </nav>
             </div>
+            <h5>All rights reserved - BP Media</h5>
             <div className='socials'>
                 <FontAwesomeIcon icon={faFacebook} color='white'/>
                 <FontAwesomeIcon icon={faTwitter} color='white' />
